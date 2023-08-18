@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Catppuccin Latte skin
+   Catppuccin Mocha skin
    ========================================================================== */
 
 /* Colors */
@@ -118,65 +118,71 @@ $palette: (
   )
 );
 
-/*
-   Colors
-   ========================================================================== */
-
-$background-color: map-get(map-get($palette, "latte"), "base") !default;
-$text-color: map-get(map-get($palette, "latte"), "text") !default;
-$primary-color: map-get(map-get($palette, "latte"), "flamingo") !default;
-
-$border-color: transparent !default;
-$code-background-color: mix2(#000, $background-color, 15%) !default;
+$background-color: #141010 !default;
+$text-color: #fff6fb !default;
+$primary-color: #f21368 !default;
+$border-color: mix(#fff, $background-color, 20%) !default;
+$code-background-color: mix(#000, $background-color, 15%) !default;
 $code-background-color-dark: mix(#000, $background-color, 20%) !default;
 $form-background-color: mix(#000, $background-color, 15%) !default;
-$footer-background-color: mix(#fff, $background-color, 0%) !default;
+$footer-background-color: mix($primary-color, #000, 10%) !default;
+$link-color: $primary-color !default;
+$link-color-hover: mix(#fff, $link-color, 25%) !default;
+$link-color-visited: mix(#000, $link-color, 25%) !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
+/* notices */
+$notice-background-mix: 90% !default;
+$code-notice-background-mix: 95% !default;
 
-$gray: map-get(map-get($palette, "latte"), "crust") !default;
-$dark-gray: mix(#000, $gray, 50%) !default;
-$darker-gray: mix(#000, $gray, 60%) !default;
-$light-gray: mix(#fff, $gray, 50%) !default;
-$lighter-gray: mix(#fff, $gray, 90%) !default;
+/* neon syntax highlighting (base16) */
+$base00: #ffffff !default;
+$base01: #e0e0e0 !default;
+$base02: #d0d0d0 !default;
+$base03: #b0b0b0 !default;
+$base04: #000000 !default;
+$base05: #101010 !default;
+$base06: #151515 !default;
+$base07: #202020 !default;
+$base08: #ff0086 !default;
+$base09: #fd8900 !default;
+$base0a: #aba800 !default;
+$base0b: #00c918 !default;
+$base0c: #1faaaa !default;
+$base0d: #3777e6 !default;
+$base0e: #ad00a1 !default;
+$base0f: #cc6633 !default;
 
-$background-color: map-get(map-get($palette, "latte"), "base") !default;
-$code-background-color: #fafafa !default;
-$code-background-color-dark: $light-gray !default;
-$text-color: map-get(map-get($palette, "latte"), "text") !default;
-$muted-text-color: mix(#fff, $text-color, 20%) !default;
-$border-color: $lighter-gray !default;
-$form-background-color: $lighter-gray !default;
-$footer-background-color: $lighter-gray !default;
-
-$primary-color: map-get(map-get($palette, "latte"), "flamingo") !default;
-$success-color: map-get(map-get($palette, "latte"), "green") !default;
-$warning-color: map-get(map-get($palette, "latte"), "peach") !default;
-$danger-color: map-get(map-get($palette, "latte"), "red") !default;
-$info-color: map-get(map-get($palette, "latte"), "sky") !default;
-$focus-color: $primary-color !default;
-$active-color: mix(#fff, $primary-color, 80%) !default;
-
-/* links */
-$link-color: mix(#000, $info-color, 20%) !default;
-$link-color-hover: mix(#000, $link-color, 25%) !default;
-$link-color-visited: mix(#fff, $link-color, 15%) !default;
-$masthead-link-color: $primary-color !default;
-$masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
-$navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
-
-/* button colors */
-.btn :hover {
-background-color: $primary-color !important;
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
 }
+
+/* next/previous buttons */
+.pagination--pager {
+  color: $text-color;
+  background-color: $primary-color;
+  border-color: transparent;
+
+  &:visited {
+    color: $text-color;
+  }
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}
+
 
 /* Set style of the Light/Dark switch*/
 .theme-toggle {
   --size: 2rem;
-  --icon-fill: map-get(map-get($palette, "latte"), "text");
-  --icon-fill-hover: map-get(map-get($palette, "latte"), "base");
+  --icon-fill: map-get(map-get($palette, "mocha"), "text");
+  --icon-fill-hover: map-get(map-get($palette, "mocha"), "base");
 
   background: none;
   border: none;
@@ -241,16 +247,4 @@ html[data-theme="light"] * > .moonIcon {
   100% {
     opacity: 1;
   }
-}
-
-
-.author__urls.social-icons i,
-.author__urls.social-icons .svg-inline--fa,
-.page__footer-follow .social-icons i,
-.page__footer-follow .social-icons .svg-inline--fa  {
-  color: inherit;
-}
-
-.ais-search-box .ais-search-box--input {
-  background-color: $form-background-color;
 }
